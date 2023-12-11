@@ -1,0 +1,19 @@
+services:
+  proxy:
+    build: 
+      context: .
+      dockerfile: proxy.Dockerfile
+
+    ports:
+      - "8080:80" # container:host
+      - "443:443"
+    
+  worker1:
+    build: 
+      context: .
+      dockerfile: worker1.Dockerfile
+
+  worker2:
+    build: 
+      context: .
+      dockerfile: worker2.Dockerfile
